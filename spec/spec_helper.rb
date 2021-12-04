@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
-require_relative '../lib/sub_strings/support'
-require_relative '../lib/sub_strings/start'
+require_relative '../lib/substrings/support'
+require_relative '../lib/substrings/start'
+
 
 require 'awesome_print'
 require 'pry'
