@@ -5,7 +5,7 @@ class Start
   include Support
 
   def initialize(phrase, dictionary)
-    @phrase = phrase
+    @phrase = phrase.map(&:downcase)
     @dictionary = dictionary.map(&:downcase)
     @result = {}
   end
