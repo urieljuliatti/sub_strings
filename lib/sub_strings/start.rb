@@ -5,8 +5,8 @@ class Start
   include Support
 
   def initialize(phrase, dictionary)
-    @phrase = phrase.map(&:downcase)
-    @dictionary = dictionary.map(&:downcase)
+    @phrase = phrase
+    @dictionary = dictionary
     @result = {}
   end
 
@@ -21,5 +21,5 @@ class Start
     @result
   end
 
-  attr_reader :result
+  attr_accessor :phrase, :dictionary, :result
 end
