@@ -3,7 +3,7 @@
 module Support
 
   def prepare
-    @phrase.split.map { |splitted| splitted.gsub(/[-,'?!]/, '').downcase }
+    @phrase.split.map { |splitted| splitted.gsub(/[-,'?!]/, '') }
   end
 
   def append(item)
