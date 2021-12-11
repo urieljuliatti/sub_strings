@@ -6,6 +6,11 @@ FactoryBot.define do
     dictionary { %w[below down go going horn how howdy it i low own part partner sit] }
     result { { 'below' => 1, 'low' => 1 } }
 
+    trait :support do
+      phrase { 'I\'m going to build my own theme park!' }
+      dictionary { %w[below down go going horn how howdy it i low own part partner sit ng] }
+    end
+
     trait :bender do
       phrase { 'Bender' }
     end

@@ -15,7 +15,7 @@ class Start
 
     prepare.each do |prep|
       @dictionary.map do |item|
-        append(item) if prep.include?(item)
+        increment(item) if prep.include?(item)
       end
     end
     @result

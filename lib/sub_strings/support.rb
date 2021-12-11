@@ -6,7 +6,7 @@ module Support
     @phrase.split.map { |splitted| splitted.gsub(/[-,'?!]/, '').downcase }
   end
 
-  def append(item)
+  def increment(item)
     if @result[item].nil?
       @result[item] = 1
     else

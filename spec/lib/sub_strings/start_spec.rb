@@ -12,7 +12,7 @@ RSpec.describe Start do
     context 'when a empty string is given' do
       let(:phrase) { ' ' }
 
-      it { is_expected.to be_empty }
+      it { is_expected.to be_blank }
     end
 
     context 'when a valid word is given' do
@@ -22,7 +22,7 @@ RSpec.describe Start do
     context 'when an invalid word is given' do
       let(:phrase) { build(:main, :bender).phrase }
 
-      it { is_expected.to be_empty }
+      it { is_expected.to be_blank }
     end
 
     context 'when a valid phrase is given' do
