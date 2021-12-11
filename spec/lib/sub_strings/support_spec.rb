@@ -2,8 +2,9 @@
 
 RSpec.describe Support do
   let(:start) { Start.new(phrase, dictionary) { include Support } }
-  let(:dictionary) { %w[below down go going horn how howdy it i low own part partner sit ng] }
-  let(:phrase) { "I'm going to build my own theme park!" }
+  let(:main) { build(:main, :support) }
+  let(:dictionary) { main.dictionary }
+  let(:phrase) { main.phrase }
 
   describe '.prepare' do
     subject(:prepare) { start.prepare }
@@ -22,20 +23,20 @@ RSpec.describe Support do
     end
   end
 
-  describe '.append' do
-    subject(:append) { start.append(item) }
+  describe '.increment' do
+    subject(:increment) { start.increment(item) }
     let(:item) { 'ng' }
-    let(:phrase) { "Howdy partner, sit down! How's it going? Hong?" }
+    let(:phrase) { 'Howdy partner, sit down! How\'s it going? Hong?' }
 
-    context 'when is tested for each iteration' do
+    context 'when is a single item' do
       it { is_expected.to eq 1 }
       it { expect(start.result).to_not include({ 'ng' => 1 }) }
     end
 
-    context 'when substring comes after .generate' do
+    context 'when proceeds after .generate call' do
       before do
         start.generate
-        append
+        increment
       end
 
       it { is_expected.to eq 3 }

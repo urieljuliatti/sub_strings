@@ -5,8 +5,8 @@ class Start
   include Support
 
   def initialize(phrase, dictionary)
-    @phrase = phrase.map(&:downcase)
-    @dictionary = dictionary.map(&:downcase)
+    @phrase = phrase
+    @dictionary = dictionary
     @result = {}
   end
 
@@ -15,11 +15,11 @@ class Start
 
     prepare.each do |prep|
       @dictionary.map do |item|
-        append(item) if prep.include?(item)
+        increment(item) if prep.include?(item)
       end
     end
     @result
   end
 
-  attr_reader :result
+  attr_accessor :phrase, :dictionary, :result
 end
